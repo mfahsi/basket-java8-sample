@@ -15,7 +15,7 @@ import com.mfa.shop.samples.shop.servcie.PriceListServiceWithStaticPricesImpl;
  * Main app
  *
  */
-public class App 
+public class PriceBasketApp 
 {
     public static void main( String[] args )
     {

@@ -21,7 +21,6 @@ public class ItemPricingOffer {
 		this.pricePerUnit = price.divide(new BigDecimal(quantity));
 	}
 	
-	
 	public String getItemId() {
 		return itemId;
 	}

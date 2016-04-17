@@ -25,7 +25,7 @@ public class BasketTest {
 		basket.addToBasket("Apple");
 		basket.addToBasket("Mango");
 		basket.addToBasket("Apple");
-		Assert.assertTrue(basket.count("Bananas") == 0);
+		Assert.assertTrue(basket.count("Banana") == 0);
 		Assert.assertTrue(basket.count("Apple") == 2);
 		Assert.assertTrue(basket.count("Orange") == 1);
 	}

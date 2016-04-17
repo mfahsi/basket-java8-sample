@@ -69,7 +69,7 @@ public class Basket {
 		private String itemId;
 		private Integer quantity;
 
-		public BasketItem(String itemId, Integer quantity) {
+		private BasketItem(String itemId, Integer quantity) {
 			super();
 			this.itemId = itemId;
 			this.quantity = quantity;
@@ -84,7 +84,5 @@ public class Basket {
 		}
 
 	}
-	
-	
 
 }

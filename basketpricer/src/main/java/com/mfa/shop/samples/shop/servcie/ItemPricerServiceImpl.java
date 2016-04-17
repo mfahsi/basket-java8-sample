@@ -1,13 +1,13 @@
 package com.mfa.shop.samples.shop.servcie;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 import com.mfa.shop.domain.ItemPricingOffer;
 
+//price a given quantity of an item using the offers available in a price list service
 public class ItemPricerServiceImpl implements ItemPricerService {
 
 	private PriceListService priceList;
