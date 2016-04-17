@@ -1,5 +1,6 @@
 package com.mfa.shop.samples.shop.servcie;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
@@ -15,6 +16,10 @@ public class PriceListServiceWithStaticPricesImpl implements PriceListService {
 		offers = staticData;
 	}
 	
+	public Collection<ItemPricingOffer> getPricesForItem(String itemId)
+	{
+		return getPricesForItem(itemId, Calendar.getInstance().getTime());
+	}
 	
 	public Collection<ItemPricingOffer> getPricesForItem(String itemId, Date asOf)
 	{

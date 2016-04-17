@@ -8,4 +8,5 @@ import com.mfa.shop.domain.ItemPricingOffer;
 public interface PriceListService {
 
 	Collection<ItemPricingOffer> getPricesForItem(String itemId, Date asOf);
+	Collection<ItemPricingOffer> getPricesForItem(String itemId);
 }

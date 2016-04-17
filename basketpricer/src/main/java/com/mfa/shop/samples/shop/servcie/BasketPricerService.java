@@ -7,6 +7,11 @@ import com.mfa.shop.domain.Basket;
 
 public interface BasketPricerService {
 	
-	BigDecimal priceBasket(Basket basket, Date asOf) throws RuntimeException;
+	/**
+	 * @param basket the basket to price
+	 * @return basket total price
+	 * @throws RuntimeException if unable to price any item
+	 */
+	BigDecimal priceBasket(Basket basket) throws RuntimeException;
 
 }

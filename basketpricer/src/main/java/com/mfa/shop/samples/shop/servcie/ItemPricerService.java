@@ -15,6 +15,6 @@ public interface ItemPricerService {
 	 * @param asOf : used to choose price
 	 * @return price for the given quantity as per date, or None if unable to find the price
 	 */
-	Optional<BigDecimal> priceItem(String itemId, int quantity, Date asOf);
+	Optional<BigDecimal> priceItem(String itemId, int quantity);
 
 }

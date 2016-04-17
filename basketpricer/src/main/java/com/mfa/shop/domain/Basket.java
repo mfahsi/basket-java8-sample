@@ -2,14 +2,10 @@ package com.mfa.shop.domain;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Basket {
 
@@ -21,6 +17,9 @@ public class Basket {
 	}
 	public Basket(String... items)
 	{
+		if (items == null)
+			throw new IllegalArgumentException(
+					"Null is not a valide basket item");
 		for (String item : items) {
 			addToBasket(item);
 		}
@@ -54,7 +53,7 @@ public class Basket {
 
 	}
 
-	public Collection<BasketItem> groupQuantitiesByItem(String item) {
+	public Collection<BasketItem> groupQuantitiesByItem() {
 		Map<String,List<BasketItem>> quantitiesPerProduct = basketItems.stream().collect(
 				Collectors.groupingBy(p -> p.getItemId()));
 		

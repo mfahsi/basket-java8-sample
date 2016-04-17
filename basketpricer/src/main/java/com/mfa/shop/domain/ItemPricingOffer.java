@@ -2,6 +2,10 @@ package com.mfa.shop.domain;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents a price entry in the price list.
+ * there may be multiple offers for the same fruit with eventually different quantities
+ * */
 public class ItemPricingOffer {
 	
 	private String itemId;
@@ -21,7 +25,6 @@ public class ItemPricingOffer {
 	public String getItemId() {
 		return itemId;
 	}
-
 
 	public BigDecimal getPrice() {
 		return price;

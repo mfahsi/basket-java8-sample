@@ -29,11 +29,11 @@ public class ItemPricerServiceTest {
 	public void should_price_item_correctly()
 	{
 		// define unit price for Orange, we may have other offers in the futur
-		when(priceList.getPricesForItem("Orange", anyObject())).thenReturn(Arrays.asList(new ItemPricingOffer("Orange",new BigDecimal(0.8),1)));
+		when(priceList.getPricesForItem("Orange")).thenReturn(Arrays.asList(new ItemPricingOffer("Orange",new BigDecimal(0.8),1)));
 
 		ItemPricerService pricer = new ItemPricerServiceImpl(priceList); 
 		
-		assertEquals("2 oranges are worth 0.8 * 2", 1.6,  pricer.priceItem("Orange", 2, Calendar.getInstance().getTime()).get() );
+		assertEquals("2 oranges are worth 0.8 * 2", 1.6,  pricer.priceItem("Orange", 2).get() );
 	
 	}
 	
@@ -41,9 +41,9 @@ public class ItemPricerServiceTest {
 	public void should_price_item_choose_best_price_offer_correctly()
 	{
 		// define unit price for Orange 0.8, and a discounted price of 1 for 2 oranges
-		when(priceList.getPricesForItem("Orange", anyObject())).thenReturn(Arrays.asList(new ItemPricingOffer("Orange",new BigDecimal(0.8),1), new ItemPricingOffer("Orange",new BigDecimal(1), 2)));
+		when(priceList.getPricesForItem("Orange")).thenReturn(Arrays.asList(new ItemPricingOffer("Orange",new BigDecimal(0.8),1), new ItemPricingOffer("Orange",new BigDecimal(1), 2)));
 		ItemPricerService pricer = new ItemPricerServiceImpl(priceList); 
-		assertEquals("3 oranges are priced 2 for 1 £ plus third one for  0.8 ", 1.8,  pricer.priceItem("Orange", 3, Calendar.getInstance().getTime()).get() );
+		assertEquals("3 oranges are priced 2 for 1 £ plus third one for  0.8 ", 1.8,  pricer.priceItem("Orange", 3).get() );
 	
 	}
 
@@ -51,9 +51,9 @@ public class ItemPricerServiceTest {
 	public void should_not_return_value_if_no_price_found()
 	{
 		// define unit price for Orange 0.8, and a discounted price of 1 for 2 oranges
-		when(priceList.getPricesForItem("Orange", anyObject())).thenReturn(Collections.emptyList());
+		when(priceList.getPricesForItem("Orange")).thenReturn(Collections.emptyList());
 		ItemPricerService pricer = new ItemPricerServiceImpl(priceList); 
-		assertFalse("No price available", pricer.priceItem("Orange", 3, Calendar.getInstance().getTime()).isPresent() );
+		assertFalse("No price available", pricer.priceItem("Orange", 3).isPresent() );
 	
 	}
 	
@@ -61,9 +61,9 @@ public class ItemPricerServiceTest {
 	public void should_not_return_value_if_item_null()
 	{
 		// define unit price for Orange 0.8, and a discounted price of 1 for 2 oranges
-		when(priceList.getPricesForItem(null, anyObject())).thenReturn(Collections.emptyList());
+		when(priceList.getPricesForItem(null)).thenReturn(Collections.emptyList());
 		ItemPricerService pricer = new ItemPricerServiceImpl(priceList); 
-		assertFalse("No price available", pricer.priceItem(null, 3, Calendar.getInstance().getTime()).isPresent() );
+		assertFalse("No price available", pricer.priceItem(null, 3).isPresent() );
 	
 	}
 }
