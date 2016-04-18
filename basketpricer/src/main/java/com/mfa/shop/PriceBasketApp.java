@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 import com.mfa.shop.domain.Basket;
 import com.mfa.shop.domain.ItemPricingOffer;
-import com.mfa.shop.samples.shop.servcie.BasketPricerService;
-import com.mfa.shop.samples.shop.servcie.BasketPricerServiceImpl;
-import com.mfa.shop.samples.shop.servcie.ItemPricerServiceImpl;
-import com.mfa.shop.samples.shop.servcie.PriceListService;
-import com.mfa.shop.samples.shop.servcie.PriceListServiceWithStaticPricesImpl;
+import com.mfa.shop.servcie.BasketPricerService;
+import com.mfa.shop.servcie.BasketPricerServiceImpl;
+import com.mfa.shop.servcie.ItemPricerServiceImpl;
+import com.mfa.shop.servcie.PriceListService;
+import com.mfa.shop.servcie.PriceListServiceWithStaticPricesImpl;
 
 /**
  * Main app

@@ -1,7 +1,6 @@
-package com.mfa.shop.samples.shop.servcie;
+package com.mfa.shop.servcie;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Optional;
 
 public interface ItemPricerService {
